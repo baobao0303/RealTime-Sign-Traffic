@@ -1,0 +1,16 @@
+## Cấu trúc file
+images: thư mục hình ảnh
+classes.txt: chứa các name cho từng label
+
+
+## Chạy Prompt cho anaconda 
+activate labelimg
+
+## Dán label cho hình
+pip install labelimg
+labelimg images(source img) images\classes.txt
+pip install labelme
+labelme coffee-leaf-dataset(source img) --labels classes.txt
+
+## Chạy python chuyển label sang file txt vì labelme nó sẽ xuất file sang file json 
+python labelme2yolo.py --dataset coffee-leaf-dataset --names classes.txt
